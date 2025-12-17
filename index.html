@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram Channel Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="header__title visually-hidden">Каналы Telegram</h1>
+
+    <form class="search" role="search">
+      <input type="search" class="search__input" placeholder="Поиск по названию, телефону, ID"
+        aria-label="Поиск канала" />
+    </form>
+
+    <button type="button" class="button button--primary header__button" id="addChannelBtn">
+      + Добавить канал
+    </button>
+  </header>
+
+  <!-- Table -->
+  <main class="channels">
+    <section class="channels__table table-wrapper">
+      <table class="table">
+        <thead class="table__head">
+          <tr class="table__row">
+            <th class="table__cell">Название</th>
+            <th class="table__cell">Воронка и этап</th>
+            <th class="table__cell">Данные аккаунта</th>
+            <th class="table__cell">Статус</th>
+            <th class="table__cell">Действие</th>
+          </tr>
+        </thead>
+        <tbody class="table__body" id="channelsList">
+          <!-- Каналы будут добавляться через JS -->
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+
+
+  <!-- Modal -->
+  <section class="modal visually-hidden" role="dialog" aria-modal="true" id="modal">
+    <div class="modal__overlay"></div>
+
+    <div class="modal__content">
+      <h2 class="modal__title">Канал №150511</h2>
+      <div class="modal__progress">
+        <span class="modal__progress-indicator"></span>
+      </div>
+      <p class="modal__status">Статус: отсканируйте QR</p>
+
+      <div class="modal__qr">
+        <img src="qr-placeholder.png" alt="QR Code" />
+      </div>
+
+      <ol class="modal__steps">
+        <li>Откройте Telegram</li>
+        <li>Выберите cвязанные устройства</li>
+        <li>Выберите добавить новое устройство</li>
+        <li>Наведите камеру на QR-код</li>
+      </ol>
+
+      <!-- Кнопка закрытия отсуствует, модалка закрывается по клику вне или нажатию на ESC -->
+    </div>
+  </section>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
